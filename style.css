@@ -1,0 +1,116 @@
+
+@font-face {
+    font-family: 'StratosSkyeng';
+    src: local('StratosSkyeng'), url('./statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2') format("woff2"),
+    url('./statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'StratosSkyeng';
+    src: local('StratosSkyeng'), url('./statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2') format("woff2"),
+    url('./statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff') format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-family: 'StratosSkyeng';
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+.diff_selection{
+    background-color: #004980;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.selection{
+    background-color: #C2F5FF;
+    width: 480px;
+    height: 459px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.selection_title{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #004980;
+    
+    width: 208px;
+    text-align: center;
+}
+
+.radio_sel{
+    display: flex;
+    gap: 24px
+}
+
+.radio_input:checked, 
+.radio_input:not(:checked) 
+{
+    position: absolute;
+    left: -9999px;
+}
+
+.sel{
+    width: 97px;
+    height: 98px;
+    background-color: #ffff;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #0080C1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.selection_button{
+    width: 246px;
+    height: 50px;
+    background: #7AC100;
+    border-radius: 12px;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    
+}
+
+.selection_button:hover{
+    background: #53a700;
+}
+
+.selection_button:active{
+    background: #476714;
+}
+

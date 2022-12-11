@@ -4,25 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Start</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="diff_selection ">
         <div class="selection">
             <h1 class="selection_title">Выбор сложности</h1>
-            <!-- <div class="selection_buttons">
-                <div class="selection_radio">
-                    <input type="radio" class="sel_input" id="contactChoice1" name="contact" value="1">
-                    <input type="radio" class="sel_input" id="contactChoice1" name="contact" value="1">
-                    <input type="radio" class="sel_input" id="contactChoice1" name="contact" value="1">
-                </div>
-                <div class="selection_radio_buttons">
-                    <div class="sel sel_1">1</div>
-                    <div class="sel sel_2">2</div>
-                    <div class="sel sel_3">3</div>
-                </div>
-            </div> -->
             <div class="radio_sel">
                 <input class="radio_input" type="radio" id="contactChoice1" name="contact" value="1">
                 <label class="sel" for="contactChoice1">1</label>
@@ -35,15 +23,12 @@
             </div>
 
             <button class="selection_button">Старт</button>
-
-            
         </div>
     </div>
     <script>
         const sel = document.querySelectorAll('.sel');
         const button = document.querySelector('.selection_button');
-        const radios = document.querySelectorAll('.radio_input');
-
+        
         for (let j = 0; j < sel.length; j++) {
             sel[j].onclick = () =>{
                 for (let i = 0; i < sel.length; i++) {
@@ -51,15 +36,15 @@
                 };
                 sel[j].style.backgroundColor = '#7AC100';
             };
-        }
+        };
 
         button.onclick = () => {
-            for (let radio of radios) {
-                if (radio.checked) {
-                    console.log(radio.value);
-                }
-	        }
-        }
+            if (document.querySelector('.radio_input:checked')) {
+                const level = localStorage.setItem('level',document.querySelector('.radio_input:checked').value);
+
+                window.location.href = './game_page.html';
+            };
+        };
     </script>
 </body>
 </html>

@@ -114,3 +114,97 @@ body{
     background: #476714;
 }
 
+
+
+
+/* стили для игровой страницы */
+
+.center{
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.game{
+    background-color: #004980;
+    height: 100vh;
+}
+
+.game_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.timer_name{
+    display: flex;
+    flex-direction: row;
+    gap: 57px;
+    margin-left: 40px
+}
+
+.time{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #FFFFFF;
+}
+
+.timer_name_par{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+
+.button_new_start{
+    width: 246px;
+    height: 50px;
+    background: #7AC100;
+    border-radius: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 52px;
+}
+
+.button_new_start:hover{
+    background: #53a700;
+}
+
+.button_new_start:active{
+    background: #476714;
+}
+
+.game_carts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cart{
+    width: 95px;
+    height: 133px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.div_shirt{
+    width: 83px;
+    height: 121px;
+    background: #C2F5FF;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+

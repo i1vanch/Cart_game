@@ -5,11 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="game">
+        <div class="game_header center">
+            <div class="timer">
+                <div class="timer_name">
+                    <p class="timer_name_par">min</p>
+                    <p class="timer_name_par">sek</p>
+                </div>
+                <h1 class="time"><time>00.00</time></h1>
+            </div>
+            <button class="button_new_start">Начать заново</button>
+        </div>
+        <div class="game_carts center">
+
+        </div>
+    </div>
+
     <script>
         const level = localStorage.getItem('level');
         console.log(level);
+
+        const time = document.querySelector('.time');
+        const btnNewSt = document.querySelector('.button_new_start');
+        const gameCarts = document.querySelector('.game_carts');
+
+        let sec = 0;
+        let min = 0;
+        let t;
+
+        function tick(){
+            sec++;
+            if (sec >= 60) {
+                sec = 0;
+                min++;
+            };
+        };
+
+        function add() {
+            tick();
+            time.textContent = (min > 9 ? min : "0" + min) + "." + (sec > 9 ? sec : "0" + sec);
+            timer();
+        };
+        function timer() {
+            t = setTimeout(add, 1000);
+        };
+
+        timer();
+
+        btnNewSt.onclick = () => {
+            //стоп времени
+            clearTimeout(t);
+            
+        };
+
+        // // сброс времени
+        // time.textContent = "00.00";
+        // seconds = 0; 
+        // minutes = 0;
+        
+
+
+
+        if (level === '1') {
+            for (let i = 0; i < 6; i++) {
+                cartShirt(); 
+            };
+        };
+
+        if (level === '2') {
+            for (let i = 0; i < 12; i++) {
+                cartShirt(); 
+            };
+        };
+
+        if (level === '3') {
+            for (let i = 0; i < 18; i++) {
+                cartShirt(); 
+            };
+        };
+
+        const carts = document.querySelectorAll('.cart');
+
+        function cartShirt() {
+            const cart = document.createElement('div');
+            cart.classList.add('cart');
+
+            const divShirt = document.createElement('div');
+            divShirt.classList.add('div_shirt');
+
+            const imgShirt = document.createElement('img');
+            imgShirt.classList.add('img_shirt');
+            imgShirt.src = './img/Union.svg';
+
+            cart.appendChild(divShirt);
+            divShirt.appendChild(imgShirt);
+
+            gameCarts.appendChild(cart); 
+
+        };
+
+        for (let i = 0; i < carts.length; i++) {
+            carts[i].onclick = () =>{
+                carts[i].textContent = '';
+            };
+            
+        };
+
     </script>
 </body>
 </html>

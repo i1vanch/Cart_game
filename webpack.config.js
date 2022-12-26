@@ -19,7 +19,7 @@ module.exports = {
         rules: [
             {test: /\.css$/, use: [MiniCssExtractPlugin.loader,"css-loader"]},
             {
-                test: /\.(png|svg|gpg|jpeg|gif)$/i,
+                test: /\.(png|svg|gpg|jpg|gif)$/i,
                 type: "asset/resource",
             },
             {
@@ -43,9 +43,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html',
         }),
-        // new HtmlWebpackPlugin({
-        //     template: './game_page.html',
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'game_page.html',
+            template: './game_page.html',
+        }),
         new MiniCssExtractPlugin(),
     ],
     optimization:{

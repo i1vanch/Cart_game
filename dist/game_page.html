@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="game">
-        <div class="game_header center">
-            <div class="timer">
-                <div class="timer_name">
-                    <p class="timer_name_par">min</p>
-                    <p class="timer_name_par">sek</p>
-                </div>
-                <h1 class="time"><time>00.00</time></h1>
-            </div>
-            <button class="button_new_start">Начать заново</button>
-        </div>
-        <div class="game_carts center">
-
-        </div>
-    </div>
-
-    <script src="./index.js"></script>
-    <script>
-
-        const level = localStorage.getItem('level');
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Game page</title><link rel="stylesheet" href="style.css"><script defer="defer" src="bundle.js"></script><link href="main.css" rel="stylesheet"></head><body><div class="game"><div class="game_header center"><div class="timer"><div class="timer_name"><p class="timer_name_par">min</p><p class="timer_name_par">sek</p></div><h1 class="time"><time>00.00</time></h1></div><button class="button_new_start">Начать заново</button></div><div class="game_carts center"></div></div><script src="./index.js"></script><script>const level = localStorage.getItem('level');
         console.log(level);
 
         const time = document.querySelector('.time');
@@ -196,7 +166,6 @@
 
         function templateCarts() {
 
-            
             shuffle(arrCarts);
 
             for (let i = 0; i < arrCarts.length; i++) {
@@ -238,9 +207,4 @@
 
         setTimeout(hiddenShirt, 5000);
         setTimeout(timer, 5000);
-        setTimeout(cartsClick, 5000);
-
-
-    </script>
-</body>
-</html>
+        setTimeout(cartsClick, 5000);</script></body></html>

@@ -30,14 +30,14 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin({
-            // patterns: [{from: 'static', to: 'static'}],
-            patterns: [
-                {
-                    from: path.resolve(__dirname, "./static"),
-                    to: path.resolve(__dirname, "./static"),
-                    noErrorOnMissing: true,
-                }
-            ],
+            patterns: [{from: 'img', to: 'img', noErrorOnMissing: true}],
+            // patterns: [
+            //     {
+            //         from: path.resolve(__dirname, "./static"),
+            //         to: path.resolve(__dirname, "./static"),
+            //         noErrorOnMissing: true,
+            //     }
+            // ],
             
         }),
         new HtmlWebpackPlugin({

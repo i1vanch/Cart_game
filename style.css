@@ -19,6 +19,7 @@
 
 body{
     font-family: 'StratosSkyeng';
+    text-align: center;
 }
 
 *{
@@ -125,8 +126,18 @@ body{
 }
 
 .game{
+    height: 100vh;  
     background-color: #004980;
+    position:relative;
+}
+
+.bag{
+    position: absolute;
+    background: #004980;
+    opacity: 0.9;
+    width: 100%;
     height: 100vh;
+    z-index: 1;
 }
 
 .game_header{
@@ -134,6 +145,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 45px;
+    position:relative;
 }
 
 .timer_name{
@@ -141,6 +153,7 @@ body{
     flex-direction: row;
     gap: 57px;
     margin-left: 40px
+
 }
 
 .time{
@@ -185,6 +198,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    position:relative;
 }
 
 .cart{
@@ -211,4 +225,83 @@ body{
     border-radius: 4px;
 }
 
+
+
+
+
+
+
+/* стили для результата игры */
+
+.bag_tablet{
+    width: 480px;
+    height: 459px;
+    background: #C2F5FF;
+    border-radius: 12px;
+    position: absolute;
+    z-index: 2;
+    left: 32%;
+    top: 17%;   
+    flex-direction: column;
+    align-items: center;
+}
+
+.tablet_img{
+    padding-top: 32px;
+    padding-bottom: 9px;
+}
+
+.p_t_r{
+    width: 276px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #004980;
+}
+
+.tablet_timer{
+    width: 230px;
+    height: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    padding-top: 28px;
+    padding-bottom: 10px;
+}
+
+.p_t_t_r{
+    width: 155px;
+    height: 72px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #000000;
+}
+
+.tablet_restart{
+    width: 246px;
+    height: 50px;
+    background: #7AC100;
+    border-radius: 12px;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-top: 40px;
+}
+
+.tablet_restart:hover{
+    background: #53a700;
+}
+
+.tablet_restart:active{
+    background: #476714;
+}
 

@@ -9,7 +9,17 @@
 </head>
 <body>
 
+    <div class="bag_tablet hidden">
+        <img class="tablet_img" src="" alt="">
+        <div class="tablet_result" id="tabRes"></div>
+        <p class="tablet_timer">Затраченное время:</p>
+        <div class="tablet_time_result" id="tabTimeRes"></div>
+        <button class="tablet_restart">Играть снова</button>
+    </div>
+    
     <div class="game">
+        <div class="bag hidden"></div>
+
         <div class="game_header center">
             <div class="timer">
                 <div class="timer_name">
@@ -20,227 +30,11 @@
             </div>
             <button class="button_new_start">Начать заново</button>
         </div>
-        <div class="game_carts center">
-
+        <div class="game_carts center"></div>
         </div>
+
     </div>
-
-    <script src="./index.js"></script>
-    <script>
-
-        const level = localStorage.getItem('level');
-        console.log(level);
-
-        const time = document.querySelector('.time');
-        const btnNewSt = document.querySelector('.button_new_start');
-        const gameCarts = document.querySelector('.game_carts');
-        
-        let sec = 0;
-        let min = 0;
-        let t;
-
-        function tick(){
-            sec++;
-            if (sec >= 60) {
-                sec = 0;
-                min++;
-            };
-        };
-
-        function add() {
-            tick();
-            time.textContent = (min > 9 ? min : "0" + min) + "." + (sec > 9 ? sec : "0" + sec);
-            timer();
-        };
-
-        function timer() {
-            t = setTimeout(add, 1000);
-        };
-        
-        btnNewSt.onclick = () => {
-            window.location.reload();
-        };
-
-        // // сброс времени
-        // time.textContent = "00.00";
-        // seconds = 0; 
-        // minutes = 0;
-
-        const arr = ['./img/carts_img/c1.jpg', './img/carts_img/c2.jpg', './img/carts_img/c3.jpg', './img/carts_img/c4.jpg', './img/carts_img/c5.jpg', './img/carts_img/c6.jpg', './img/carts_img/c7.jpg', './img/carts_img/c8.jpg', './img/carts_img/c9.jpg', './img/carts_img/c10.jpg', './img/carts_img/c11.jpg', './img/carts_img/c12.jpg', './img/carts_img/c13.jpg', './img/carts_img/c14.jpg', './img/carts_img/c15.jpg', './img/carts_img/c16.jpg', './img/carts_img/c17.jpg', './img/carts_img/c18.jpg', './img/carts_img/c19.jpg', './img/carts_img/c20.jpg', './img/carts_img/c21.jpg', './img/carts_img/c22.jpg', './img/carts_img/c23.jpg', './img/carts_img/c24.jpg', './img/carts_img/c25.jpg', './img/carts_img/c26.jpg', './img/carts_img/c27.jpg', './img/carts_img/c28.jpg', './img/carts_img/c29.jpg', './img/carts_img/c30.jpg', './img/carts_img/c31.jpg', './img/carts_img/c32.jpg', './img/carts_img/c33.jpg', './img/carts_img/c34.jpg', './img/carts_img/c35.jpg', './img/carts_img/c36.jpg'];
-
-        let arrCarts = [];
-        let arrWin = [];
-        
-        if (level === '1') {
-            
-            for (let i = 0; i < 3; i++) {
-                let rand = Math.floor(Math.random() * arr.length);
-                arrCarts.push(arr[rand]);
-            };
-             
-            for (let i = 0; i < 3; i++) {
-                arrCarts.push(arrCarts[i]);
-                
-            };
-
-            templateCarts();
-
-            function cartsClick() {
-                const carts = document.querySelectorAll('.cart');
-                const divShirt = document.querySelectorAll('.div_shirt');
-                const imgCart = document.querySelectorAll('.cart_img');
-
-                for (let i = 0; i < carts.length; i++) {
-                    carts[i].onclick = () =>{
-                        divShirt[i].remove();
-                        imgCart[i].classList.remove('hidden');
-                        
-                        arrWin.push(imgCart[i].src);
-                        
-                        if (arrWin.length === 2 && arrWin[0] !== arrWin[1] || arrWin[2] !== arrWin[3] && arrWin[3] !== undefined || arrWin[4] !== arrWin[5] && arrWin[5] !== undefined) {
-                            clearTimeout(t);
-                            alert('loss');
-                            return;
-                        };
-
-                        if (arrWin.length === carts.length) {
-                            clearTimeout(t);
-                            alert('win');
-                        };
-                    };  
-                };
-            };
-        };
-
-        if (level === '2') {
-            for (let i = 0; i < 6; i++) {
-                let rand = Math.floor(Math.random() * arr.length);
-                arrCarts.push(arr[rand]);
-            };
-             
-            for (let i = 0; i < 6; i++) {
-                arrCarts.push(arrCarts[i]);
-            };
-
-            templateCarts();
-
-            function cartsClick() {
-                const carts = document.querySelectorAll('.cart');
-                const divShirt = document.querySelectorAll('.div_shirt');
-                const imgCart = document.querySelectorAll('.cart_img');
-
-                for (let i = 0; i < carts.length; i++) {
-                    carts[i].onclick = () =>{
-                        divShirt[i].remove();
-                        imgCart[i].classList.remove('hidden');
-                        
-                        arrWin.push(imgCart[i].src);
-                        
-                        if (arrWin.length === 2 && arrWin[0] !== arrWin[1] || arrWin[2] !== arrWin[3] && arrWin[3] !== undefined || arrWin[4] !== arrWin[5] && arrWin[5] !== undefined || arrWin[6] !== arrWin[7] && arrWin[7] !== undefined || arrWin[8] !== arrWin[9] && arrWin[9] !== undefined || arrWin[10] !== arrWin[11] && arrWin[11] !== undefined) {
-                            clearTimeout(t);
-                            alert('loss');
-                            return;
-                        };
-
-                        if (arrWin.length === carts.length) {
-                            clearTimeout(t);
-                            alert('win');
-                        };
-                    };  
-                };
-            };
-        };
-
-        if (level === '3') {
-            for (let i = 0; i < 9; i++) {
-                let rand = Math.floor(Math.random() * arr.length);
-                arrCarts.push(arr[rand]);
-            };
-             
-            for (let i = 0; i < 9; i++) {
-                arrCarts.push(arrCarts[i]);
-            };
-
-            templateCarts();
-
-            function cartsClick() {
-                const carts = document.querySelectorAll('.cart');
-                const divShirt = document.querySelectorAll('.div_shirt');
-                const imgCart = document.querySelectorAll('.cart_img');
-
-                for (let i = 0; i < carts.length; i++) {
-                    carts[i].onclick = () =>{
-                        divShirt[i].remove();
-                        imgCart[i].classList.remove('hidden');
-                        
-                        arrWin.push(imgCart[i].src);
-                        
-                        if (arrWin.length === 2 && arrWin[0] !== arrWin[1] || arrWin[2] !== arrWin[3] && arrWin[3] !== undefined || arrWin[4] !== arrWin[5] && arrWin[5] !== undefined || arrWin[6] !== arrWin[7] && arrWin[7] !== undefined || arrWin[8] !== arrWin[9] && arrWin[9] !== undefined || arrWin[10] !== arrWin[11] && arrWin[11] !== undefined || arrWin[12] !== arrWin[13] && arrWin[13] !== undefined || arrWin[14] !== arrWin[15] && arrWin[15] !== undefined || arrWin[16] !== arrWin[17] && arrWin[17] !== undefined) {
-                            clearTimeout(t);
-                            alert('loss');
-                            return;
-                        };
-
-                        if (arrWin.length === carts.length) {
-                            clearTimeout(t);
-                            alert('win');
-                        };
-                    };  
-                };
-            };
-        };
-
-        function shuffle(array) {
-            array.sort(() => Math.random() - 0.5);
-        }
-
-        function templateCarts() {
-
-            
-            shuffle(arrCarts);
-
-            for (let i = 0; i < arrCarts.length; i++) {
-
-                const cart = document.createElement('div');
-                cart.classList.add('cart');
-
-                const imgCart = document.createElement('img');
-                imgCart.classList.add('cart_img');
-                imgCart.src = arrCarts[i];
-                
-                cart.appendChild(imgCart);
-                gameCarts.appendChild(cart);
-            };
-        };
-
-        function hiddenShirt() {
-
-            const carts = document.querySelectorAll('.cart');
-            const imgCart = document.querySelectorAll('.cart_img');
-            const divShirt = document.querySelectorAll('.div_shirt');
-
-            for (let i = 0; i < arrCarts.length; i++) {
-                imgCart[i].classList.add('hidden');
-
-                const divShirt = document.createElement('div');
-                divShirt.classList.add('div_shirt');
-
-                const imgShirt = document.createElement('img');
-                imgShirt.classList.add('img_shirt');
-                imgShirt.src = './img/Union.svg';
-
-                divShirt.appendChild(imgShirt);
-                    
-                carts[i].appendChild(divShirt);
-            };  
-        };
-
-
-        setTimeout(hiddenShirt, 5000);
-        setTimeout(timer, 5000);
-        setTimeout(cartsClick, 5000);
-
-
-    </script>
+    <!-- <script src="./index.js"></script> -->
+    
 </body>
 </html>

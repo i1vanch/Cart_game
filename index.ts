@@ -232,7 +232,7 @@ function template_winner() {
     };
 };
 
-function templateCarts() {
+export function templateCarts() {
 
     shuffle(arrCarts);
 

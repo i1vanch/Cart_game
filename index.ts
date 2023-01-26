@@ -1,7 +1,7 @@
 // import img from "";
 import "./style.css";
 // import img from "./img/Union.svg";
-import * as _ from "lodash";
+// import * as _ from "lodash";
 import { HtmlTagObject } from "html-webpack-plugin";
 // _. вызов loodash функций
 
